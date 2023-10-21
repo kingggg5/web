@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[BOT_CHECK_HERO_EXPERIRED]
+--@Are_You_Ok varchar(255)
+AS
+BEGIN
+UPDATE UsersInventory SET ItemID = 20174 WHERE LeasedUntil < GETDATE()
+UPDATE UsersChars SET ItemID = 20174 WHERE LeasedUntil < GETDATE()
+END

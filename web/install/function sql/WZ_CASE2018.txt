@@ -1,0 +1,163 @@
+CREATE PROCEDURE [dbo].[WZ_CASE2018]
+
+  @in_case int,
+  @in_CustomerID int,
+  @in_email VARCHAR(150)
+AS
+BEGIN
+  SET NOCOUNT ON;
+	declare @id int = 0
+	SELECT @id=CustomerID FROM Accounts WHERE email=@in_email
+  if(@in_case = 1 and @id != 0) begin --50
+           update UsersData set GamePoints=(GamePoints + 100) where customerid = @id
+           /*exec FN_AddFullItemToUser @id, 940410, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100005, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100005, 1, -1, -1, 10000*/
+           --insert into Z_Topuplog VALUES (@in_email , 50 , GETDATE())
+        return
+    end
+	else if(@in_case = 2 and @id != 0) begin --90
+           update UsersData set GamePoints=(GamePoints + 220000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 4, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 4, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 4, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 4, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 4, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 2, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100005, 2, -1, -1, 1000
+           exec FN_AddFullItemToUser @id, 100010, 2, -1, -1, 10000
+
+           --insert into Z_Topuplog VALUES (@in_email , 90 , GETDATE())
+				return
+    end
+  else if(@in_case = 3 and @id != 0) begin --150
+           update UsersData set GamePoints=(GamePoints + 330000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 3, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100005, 3, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 3, -1, -1, 10000
+
+           --insert into Z_Topuplog VALUES (@in_email , 150 , GETDATE())
+        return
+    end
+  else if(@in_case = 4 and @id != 0) begin --300
+           update UsersData set GamePoints=(GamePoints + 660000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 12, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 12, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 12, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 12, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 12, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 7, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100005, 6, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 6, -1, -1, 10000
+
+           --insert into Z_Topuplog VALUES (@in_email , 300 , GETDATE())
+        return
+    end
+ else if(@in_case = 5 and @id != 0) begin 	--500
+           update UsersData set GamePoints=(GamePoints + 1100000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 20, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, , 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 15, -1, -1, 10000
+           exec FN_AddItemToUser 20255, 9999
+           exec FN_AddFullItemToUser @id, 100005, 10, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 10, -1, -1, 10000
+
+           --insert into Z_Topuplog VALUES (@in_email , 500 , GETDATE())
+				return
+    end
+ else if(@in_case = 6 and @id != 0) begin --1000
+           update UsersData set GamePoints=(GamePoints + 2200000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 40, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, 20272, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 30, -1, -1, 10000
+           exec FN_AddItemToUser 20272, 9999
+           exec FN_AddFullItemToUser @id, 100005, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 20, -1, -1, 10000
+		   
+           --insert into Z_Topuplog VALUES (@in_email , 1000 , GETDATE())
+        return
+    end
+	else if(@in_case = 7 and @id != 0) begin --1000
+           update UsersData set GamePoints=(GamePoints + 2200000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 40, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, 20272, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 30, -1, -1, 10000
+           exec FN_AddItemToUser 20272, 9999
+           exec FN_AddFullItemToUser @id, 100005, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 20, -1, -1, 10000
+		   
+           --insert into Z_Topuplog VALUES (@in_email , 1000 , GETDATE())
+        return
+    end
+	else if(@in_case = 8 and @id != 0) begin --1000
+           update UsersData set GamePoints=(GamePoints + 2200000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 40, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, 20272, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 30, -1, -1, 10000
+           exec FN_AddItemToUser 20272, 9999
+           exec FN_AddFullItemToUser @id, 100005, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 20, -1, -1, 10000
+		   
+           --insert into Z_Topuplog VALUES (@in_email , 1000 , GETDATE())
+        return
+    end
+	else if(@in_case = 9 and @id != 0) begin --1000
+           update UsersData set GamePoints=(GamePoints + 2200000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 40, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, 20272, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 30, -1, -1, 10000
+           exec FN_AddItemToUser 20272, 9999
+           exec FN_AddFullItemToUser @id, 100005, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 20, -1, -1, 10000
+		   
+           --insert into Z_Topuplog VALUES (@in_email , 1000 , GETDATE())
+        return
+    end
+	else if(@in_case = 10 and @id != 0) begin --1000
+           update UsersData set GamePoints=(GamePoints + 2200000) where customerid = @id
+           exec FN_AddFullItemToUser @id, 940410, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940411, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940412, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940413, 40, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 940414, 40, -1, -1, 10000
+           --exec FN_AddFullItemToUser @id, 20272, 1, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 447901, 30, -1, -1, 10000
+           exec FN_AddItemToUser 20272, 9999
+           exec FN_AddFullItemToUser @id, 100005, 20, -1, -1, 10000
+           exec FN_AddFullItemToUser @id, 100010, 20, -1, -1, 10000
+		   
+           --insert into Z_Topuplog VALUES (@in_email , 1000 , GETDATE())
+        return
+    end
+	select 0 as ResultCode
+END
